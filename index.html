@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO para Veterinarios | Guía Completa de Posicionamiento Web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #2C8C76;
+  --primary-dark: #1E6B5A;
+  --primary-light: #76B39D;
+  --secondary: #49796B;
+  --accent: #F4A261;
+  --accent-hover: #E76F51;
+  --bg-white: #FFFFFF;
+  --bg-light: #F0FAF6;
+  --bg-dark: #1A3C34;
+  --text-dark: #2D3436;
+  --text-body: #4A4A4A;
+  --text-muted: #7F8C8D;
+  --shadow-sm: 0 2px 8px rgba(44,140,118,0.08);
+  --shadow-md: 0 4px 20px rgba(44,140,118,0.12);
+  --shadow-lg: 0 8px 40px rgba(44,140,118,0.18);
+  --shadow-hover: 0 12px 48px rgba(44,140,118,0.22);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-body);
+  background: var(--bg-white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── NAVBAR ─── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(44,140,118,0.08);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 2px 24px rgba(44,140,118,0.1);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.navbar-brand .paw-icon {
+  font-size: 1.4rem;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.navbar-menu a {
+  display: block;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-body);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.navbar-menu a:hover {
+  color: var(--primary);
+  background: var(--bg-light);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #1A3C34 0%, #2C8C76 50%, #76B39D 100%);
+  overflow: hidden;
+  padding: 120px 24px 80px;
+}
+
+.hero-bg-elements {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-paw {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.06;
+  color: #fff;
+  animation: floatPaw 20s ease-in-out infinite;
+}
+
+.hero-paw:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; font-size: 4rem; }
+.hero-paw:nth-child(2) { top: 20%; right: 10%; animation-delay: 3s; font-size: 2.5rem; }
+.hero-paw:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 6s; font-size: 5rem; }
+.hero-paw:nth-child(4) { bottom: 15%; right: 5%; animation-delay: 9s; font-size: 3.5rem; }
+.hero-paw:nth-child(5) { top: 50%; left: 50%; animation-delay: 2s; font-size: 6rem; }
+.hero-paw:nth-child(6) { top: 5%; left: 40%; animation-delay: 5s; font-size: 2rem; }
+.hero-paw:nth-child(7) { bottom: 5%; left: 60%; animation-delay: 8s; font-size: 3rem; }
+.hero-paw:nth-child(8) { top: 40%; right: 25%; animation-delay: 11s; font-size: 4.5rem; }
+
+@keyframes floatPaw {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(5deg); }
+  50% { transform: translateY(-10px) rotate(-3deg); }
+  75% { transform: translateY(-25px) rotate(4deg); }
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent);
+  animation: pulseOrb 8s ease-in-out infinite;
+}
+
+.hero-orb:nth-child(9) { width: 400px; height: 400px; top: -100px; right: -100px; animation-delay: 0s; }
+.hero-orb:nth-child(10) { width: 300px; height: 300px; bottom: -80px; left: -80px; animation-delay: 4s; }
+.hero-orb:nth-child(11) { width: 200px; height: 200px; top: 40%; left: 30%; animation-delay: 2s; }
+
+@keyframes pulseOrb {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.15); opacity: 0.8; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 820px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50px;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 28px;
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 .accent-text {
+  background: linear-gradient(135deg, var(--accent), #FFD89B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,0.8);
+  max-width: 620px;
+  margin: 0 auto 36px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(244,162,97,0.4);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(244,162,97,0.5);
+}
+
+.btn-outline {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-number {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.hero-stat-number .counter-suffix {
+  color: var(--accent);
+}
+
+.hero-stat-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* ─── SECTIONS ─── */
+.section {
+  padding: 100px 24px;
+}
+
+.section-alt {
+  background: var(--bg-light);
+}
+
+.section-dark {
+  background: linear-gradient(160deg, var(--bg-dark) 0%, #234E44 100%);
+  color: #fff;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 56px;
+}
+
+.section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.section-dark .section-icon {
+  background: linear-gradient(135deg, var(--accent), #FFD89B);
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.section-dark .section-label {
+  color: var(--accent);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.section-dark h2 {
+  color: #fff;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.section-dark .section-desc {
+  color: rgba(255,255,255,0.65);
+}
+
+/* ─── STAT CARDS (Razones SEO) ─── */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.reason-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(44,140,118,0.06);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.reason-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.reason-card:hover::before {
+  transform: scaleX(1);
+}
+
+.reason-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.reason-icon.green { background: rgba(44,140,118,0.1); color: var(--primary); }
+.reason-icon.orange { background: rgba(244,162,97,0.12); color: var(--accent); }
+.reason-icon.blue { background: rgba(52,152,219,0.1); color: #3498DB; }
+.reason-icon.purple { background: rgba(155,89,182,0.1); color: #9B59B6; }
+.reason-icon.red { background: rgba(231,111,81,0.1); color: var(--accent-hover); }
+.reason-icon.teal { background: rgba(73,121,107,0.1); color: var(--secondary); }
+
+.reason-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.reason-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.reason-stat {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+/* ─── KEYWORD SECTION ─── */
+.keywords-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.keyword-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(44,140,118,0.06);
+  transition: var(--transition);
+}
+
+.keyword-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.keyword-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.keyword-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.keyword-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.keyword-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.keyword-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-body);
+  padding: 6px 12px;
+  background: var(--bg-light);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.keyword-list li:hover {
+  background: rgba(44,140,118,0.08);
+  padding-left: 16px;
+}
+
+.keyword-list li::before {
+  content: '🔍';
+  font-size: 0.75rem;
+}
+
+/* ─── LOCAL SEO ─── */
+.local-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.local-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.local-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.local-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--accent), #FFD89B);
+  color: var(--bg-dark);
+}
+
+.local-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.local-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+}
+
+.local-card ul {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.local-card ul li {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.local-card ul li .fa-check-circle {
+  color: var(--accent);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* ─── ON-PAGE SEO ─── */
+.onpage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.onpage-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(44,140,118,0.06);
+  transition: var(--transition);
+}
+
+.onpage-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.onpage-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.onpage-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.onpage-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.code-snippet {
+  display: block;
+  background: var(--bg-dark);
+  color: var(--primary-light);
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  margin-top: 14px;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+/* ─── CONTENT STRATEGY ─── */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.content-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(44,140,118,0.06);
+  transition: var(--transition);
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.content-card-img {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+}
+
+.content-card-img.img-blue { background: linear-gradient(135deg, #3498DB, #2980B9); }
+.content-card-img.img-green { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
+.content-card-img.img-orange { background: linear-gradient(135deg, var(--accent), #FFD89B); }
+.content-card-img.img-purple { background: linear-gradient(135deg, #9B59B6, #8E44AD); }
+
+.content-card-body {
+  padding: 24px;
+}
+
+.content-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.content-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.content-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+}
+
+.tag-blog { background: rgba(44,140,118,0.1); color: var(--primary); }
+.tag-video { background: rgba(52,152,219,0.1); color: #3498DB; }
+.tag-social { background: rgba(155,89,182,0.1); color: #9B59B6; }
+.tag-seasonal { background: rgba(244,162,97,0.12); color: var(--accent-hover); }
+
+/* ─── TECHNICAL SEO ─── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  text-align: center;
+  padding: 32px 24px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.tech-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+}
+
+.tech-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+}
+
+.tech-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.tech-card p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
+/* ─── METRICS TABLE ─── */
+.metrics-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-white);
+  font-size: 0.9rem;
+}
+
+.metrics-table thead {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.metrics-table thead th {
+  padding: 16px 20px;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.metrics-table tbody tr {
+  border-bottom: 1px solid rgba(44,140,118,0.06);
+  transition: var(--transition);
+}
+
+.metrics-table tbody tr:nth-child(even) {
+  background: var(--bg-light);
+}
+
+.metrics-table tbody tr:hover {
+  background: rgba(44,140,118,0.06);
+}
+
+.metrics-table tbody td {
+  padding: 14px 20px;
+  color: var(--text-body);
+}
+
+.metrics-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.metric-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-high { background: rgba(44,140,118,0.1); color: var(--primary); }
+.badge-medium { background: rgba(244,162,97,0.12); color: var(--accent-hover); }
+
+/* ─── ACTION PLAN ─── */
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary), var(--accent), var(--primary-light));
+  border-radius: 3px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 68px;
+  padding-bottom: 40px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 12px;
+  top: 4px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: var(--bg-white);
+  border: 3px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.timeline-dot .fa-solid {
+  font-size: 0.6rem;
+  color: var(--primary);
+}
+
+.timeline-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(44,140,118,0.06);
+  transition: var(--transition);
+}
+
+.timeline-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.timeline-phase {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.timeline-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.timeline-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ─── CTA SECTION ─── */
+.cta-section {
+  padding: 100px 24px;
+  background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '🐾';
+  position: absolute;
+  font-size: 15rem;
+  opacity: 0.04;
+  top: -30px;
+  right: -30px;
+  transform: rotate(15deg);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.cta-content p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--bg-dark);
+  color: rgba(255,255,255,0.6);
+  padding: 48px 24px 32px;
+  text-align: center;
+}
+
+.footer-brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.footer p {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: #FFD89B;
+}
+
+.footer-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 3px;
+  margin: 20px auto;
+}
+
+/* ─── BACK TO TOP ─── */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(44,140,118,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: var(--transition);
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(44,140,118,0.4);
+}
+
+/* ─── ANIMATIONS ─── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(44,140,118,0.08);
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-menu a {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    padding: 64px 16px;
+  }
+
+  .reasons-grid,
+  .keywords-grid,
+  .local-grid,
+  .onpage-grid,
+  .content-grid,
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    left: 16px;
+  }
+
+  .timeline-item {
+    padding-left: 52px;
+  }
+
+  .timeline-dot {
+    left: 4px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar-menu a {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#hero" class="navbar-brand">
+      <span class="paw-icon">🐾</span> SEO Veterinarios
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="navbar-menu" id="navMenu">
+      <li><a href="#razones">Por Qué SEO</a></li>
+      <li><a href="#keywords">Keywords</a></li>
+      <li><a href="#local">SEO Local</a></li>
+      <li><a href="#onpage">On-Page</a></li>
+      <li><a href="#contenidos">Contenidos</a></li>
+      <li><a href="#tecnico">Técnico</a></li>
+      <li><a href="#metricas">KPIs</a></li>
+      <li><a href="#plan">Plan</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-bg-elements">
+    <span class="hero-paw">🐾</span>
+    <span class="hero-paw">🐾</span>
+    <span class="hero-paw">🐾</span>
+    <span class="hero-paw">🐾</span>
+    <span class="hero-paw">🐾</span>
+    <span class="hero-paw">🐾</span>
+    <span class="hero-paw">🐾</span>
+    <span class="hero-paw">🐾</span>
+    <div class="hero-orb"></div>
+    <div class="hero-orb"></div>
+    <div class="hero-orb"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fa-solid fa-chart-line"></i> Guía Completa 2025
+    </div>
+    <h1>SEO para <span class="accent-text">Veterinarios</span></h1>
+    <p class="hero-subtitle">Domina las búsquedas locales, atrae más dueños de mascotas a tu clínica y convierte tu presencia digital en un flujo constante de nuevos pacientes.</p>
+    <div class="hero-cta-group">
+      <a href="https://www.roiting.com/blog/seo-veterinarios/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Leer Guía Completa en Roiting
+      </a>
+      <a href="#razones" class="btn btn-outline">
+        <i class="fa-solid fa-arrow-down"></i> Explorar Estrategia
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-number"><span class="counter" data-target="82">0</span><span class="counter-suffix">%</span></div>
+        <div class="hero-stat-label">de dueños buscan veterinario en Google</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number"><span class="counter" data-target="76">0</span><span class="counter-suffix">%</span></div>
+        <div class="hero-stat-label">de búsquedas locales generan visita en 24h</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number"><span class="counter" data-target="5">0</span><span class="counter-suffix">x</span></div>
+        <div class="hero-stat-label">más confianza con posición Top 3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RAZONES ═══ -->
+<section class="section section-alt" id="razones">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-icon"><i class="fa-solid fa-stethoscope"></i></div>
+      <div class="section-label">Fundamentos</div>
+      <h2>¿Por Qué el SEO es Vital para Veterinarios?</h2>
+      <p class="section-desc">En un mercado donde el 97% de los consumidores buscan negocios locales online, no estar posicionado equivale a ser invisible para miles de dueños de mascotas.</p>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason-card fade-up">
+        <div class="reason-icon green"><i class="fa-solid fa-map-location-dot"></i></div>
+        <div class="reason-stat">46%</div>
+        <h3>Búsquedas con Intención Local</h3>
+        <p>Casi la mitad de las búsquedas en Google tienen intención local. "Veterinario cerca de mí" es una de las queries más repetidas en el sector salud animal.</p>
+      </div>
+      <div class="reason-card fade-up">
+        <div class="reason-icon orange"><i class="fa-solid fa-mobile-screen"></i></div>
+        <div class="reason-stat">68%</div>
+        <h3>Búsquedas desde Móvil</h3>
+        <p>La mayoría de dueños de mascotas buscan servicios veterinarios desde su smartphone, especialmente en urgencias y emergencias.</p>
+      </div>
+      <div class="reason-card fade-up">
+        <div class="reason-icon blue"><i class="fa-solid fa-star"></i></div>
+        <div class="reason-stat">93%</div>
+        <h3>Confían en Reseñas Online</h3>
+        <p>Los dueños de mascotas leen reseñas antes de elegir veterinario. Un perfil con reseñas positivas genera más citas que cualquier anuncio pagado.</p>
+      </div>
+      <div class="reason-card fade-up">
+        <div class="reason-icon purple"><i class="fa-solid fa-chart-pie"></i></div>
+        <div class="reason-stat">70%</div>
+        <h3>Clics en Resultados Orgánicos</h3>
+        <p>Siete de cada diez usuarios hacen clic en resultados orgánicos, no en anuncios. El SEO ofrece el mayor retorno de inversión a largo plazo.</p>
+      </div>
+      <div class="reason-card fade-up">
+        <div class="reason-icon red"><i class="fa-solid fa-clock"></i></div>
+        <div class="reason-stat">24h</div>
+        <h3>Urgencias Veterinarias</h3>
+        <p>Cuando una mascota tiene una emergencia, su dueño busca ayuda inmediata. Estar en el top 3 de Google es literalmente salvar vidas.</p>
+      </div>
+      <div class="reason-card fade-up">
+        <div class="reason-icon teal"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="reason-stat">E-E-A-T</div>
+        <h3>Contenido de Confianza</h3>
+        <p>Google prioriza contenido de salud animal creado por profesionales veterinarios. Tu titulación y experiencia son ventajas competitivas reales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KEYWORDS ═══ -->
+<section class="section" id="keywords">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-icon"><i class="fa-solid fa-key"></i></div>
+      <div class="section-label">Investigación</div>
+      <h2>Palabras Clave Estratégicas</h2>
+      <p class="section-desc">La selección correcta de keywords determina quién te encuentra. Organiza tu estrategia en estas cuatro categorías fundamentales.</p>
+    </div>
+    <div class="keywords-grid">
+      <div class="keyword-card fade-up">
+        <div class="keyword-card-header">
+          <div class="keyword-card-icon" style="background:rgba(44,140,118,0.1);color:var(--primary);">
+            <i class="fa-solid fa-syringe"></i>
+          </div>
+          <h3>Por Servicio</h3>
+        </div>
+        <ul class="keyword-list">
+          <li>veterinario urgencias 24h</li>
+          <li>vacunación perros cachorros</li>
+          <li>esterilización gatos precio</li>
+          <li>limpieza dental veterinaria</li>
+          <li>cirugía veterinaria traumatología</li>
+          <li>desparasitación mascotas</li>
+        </ul>
+      </div>
+      <div class="keyword-card fade-up">
+        <div class="keyword-card-header">
+          <div class="keyword-card-icon" style="background:rgba(244,162,97,0.12);color:var(--accent-hover);">
+            <i class="fa-solid fa-paw"></i>
+          </div>
+          <h3>Por Animal</h3>
+        </div>
+        <ul class="keyword-list">
+          <li>veterinario gatos especialista</li>
+          <li>veterinario animales exóticos</li>
+          <li>clínica veterinaria aves</li>
+          <li>veterinario reptiles</li>
+          <li>veterinario conejos y roedores</li>
+          <li>hospital veterinario perros grandes</li>
+        </ul>
+      </div>
+      <div class="keyword-card fade-up">
+        <div class="keyword-card-header">
+          <div class="keyword-card-icon" style="background:rgba(52,152,219,0.1);color:#3498DB;">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3>Por Ubicación</h3>
+        </div>
+        <ul class="keyword-list">
+          <li>veterinario Madrid centro</li>
+          <li>clínica veterinaria Barcelona</li>
+          <li>veterinario cerca de mí abierto</li>
+          <li>hospital veterinario [barrio]</li>
+          <li>urgencias veterinarias [ciudad]</li>
+          <li>mejor veterinario [zona]</li>
+        </ul>
+      </div>
+      <div class="keyword-card fade-up">
+        <div class="keyword-card-header">
+          <div class="keyword-card-icon" style="background:rgba(155,89,182,0.1);color:#9B59B6;">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h3>Informativas</h3>
+        </div>
+        <ul class="keyword-list">
+          <li>síntomas parvovirus perros</li>
+          <li>mi gato no come qué hago</li>
+          <li>mejor alimentación para cachorros</li>
+          <li>cada cuánto vacunar a mi perro</li>
+          <li>cuidados postoperatorios mascotas</li>
+          <li>enfermedades comunes en gatos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SEO LOCAL ═══ -->
+<section class="section section-dark" id="local">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-icon"><i class="fa-solid fa-map-pin"></i></div>
+      <div class="section-label">Pilar Fundamental</div>
+      <h2>SEO Local: Tu Mayor Ventaja Competitiva</h2>
+      <p class="section-desc">El 78% de las búsquedas móviles locales terminan en una visita presencial. El SEO local es la diferencia entre una clínica llena y una sala de espera vacía.</p>
+    </div>
+    <div class="local-grid">
+      <div class="local-card fade-up">
+        <div class="local-card-icon"><i class="fa-brands fa-google"></i></div>
+        <h3>Google Business Profile</h3>
+        <p>Tu ficha de Google es tu escaparate digital más importante. Optimízala al 100%:</p>
+        <ul>
+          <li><i class="fa-solid fa-check-circle"></i> Categoría principal: "Veterinario" + secundarias específicas</li>
+          <li><i class="fa-solid fa-check-circle"></i> Fotos de la clínica, equipo y pacientes (con permiso)</li>
+          <li><i class="fa-solid fa-check-circle"></i> Horario actualizado con horarios de urgencias</li>
+          <li><i class="fa-solid fa-check-circle"></i> Publicaciones semanales con consejos y novedades</li>
+          <li><i class="fa-solid fa-check-circle"></i> Servicios listados individualmente con descripciones</li>
+        </ul>
+      </div>
+      <div class="local-card fade-up">
+        <div class="local-card-icon"><i class="fa-solid fa-star-half-stroke"></i></div>
+        <h3>Gestión de Reseñas</h3>
+        <p>Las reseñas son el factor de conversión más poderoso para clínicas veterinarias:</p>
+        <ul>
+          <li><i class="fa-solid fa-check-circle"></i> Solicita reseñas tras cada visita satisfactoria</li>
+          <li><i class="fa-solid fa-check-circle"></i> Responde SIEMPRE: agradece las positivas, gestiona las negativas</li>
+          <li><i class="fa-solid fa-check-circle"></i> Objetivo: superar las 4.5 estrellas con +50 reseñas</li>
+          <li><i class="fa-solid fa-check-circle"></i> Incluye keywords naturales en tus respuestas</li>
+        </ul>
+      </div>
+      <div class="local-card fade-up">
+        <div class="local-card-icon"><i class="fa-solid fa-building"></i></div>
+        <h3>NAP y Directorios</h3>
+        <p>La consistencia de tu información en toda la web fortalece tu autoridad local:</p>
+        <ul>
+          <li><i class="fa-solid fa-check-circle"></i> NAP idéntico (Nombre, Dirección, Teléfono) en toda la web</li>
+          <li><i class="fa-solid fa-check-circle"></i> Registro en directorios: Páginas Amarillas, Yelp, iVeterinarios</li>
+          <li><i class="fa-solid fa-check-circle"></i> Perfil en asociaciones veterinarias locales y nacionales</li>
+          <li><i class="fa-solid fa-check-circle"></i> Citas locales en medios y blogs de la comunidad</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ON-PAGE ═══ -->
+<section class="section" id="onpage">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-icon"><i class="fa-solid fa-code"></i></div>
+      <div class="section-label">Optimización</div>
+      <h2>SEO On-Page para Clínicas Veterinarias</h2>
+      <p class="section-desc">Cada página de tu web debe estar optimizada para comunicar relevancia y autoridad tanto a Google como a tus pacientes potenciales.</p>
+    </div>
+    <div class="onpage-grid">
+      <div class="onpage-card fade-up">
+        <div class="onpage-number">1</div>
+        <h3>Title Tags y Meta Descriptions</h3>
+        <p>Cada servicio necesita su propia página con títulos optimizados que incluyan la keyword principal, ubicación y un diferenciador.</p>
+        <span class="code-snippet">&lt;title&gt;Veterinario Urgencias 24h en Madrid | Clínica [Nombre]&lt;/title&gt;<br>&lt;meta name="description" content="Urgencias veterinarias 24 horas en Madrid. Equipo especializado, diagnóstico por imagen y cirugía. Llámanos ahora ☎ 91X XXX XXX"&gt;</span>
+      </div>
+      <div class="onpage-card fade-up">
+        <div class="onpage-number">2</div>
+        <h3>Schema Markup Veterinario</h3>
+        <p>Los datos estructurados ayudan a Google a entender tu negocio y mostrar rich snippets con estrellas, horarios y teléfono en los resultados.</p>
+        <span class="code-snippet">@type: "VeterinaryCare"<br>name: "Clínica Veterinaria [Nombre]"<br>priceRange: "€€"<br>openingHours: "Mo-Su 00:00-23:59"<br>aggregateRating: 4.8/5</span>
+      </div>
+      <div class="onpage-card fade-up">
+        <div class="onpage-number">3</div>
+        <h3>E-E-A-T Veterinario</h3>
+        <p>Google evalúa la calidad del contenido de salud animal con criterios estrictos. Demuestra experiencia, expertise, autoridad y confianza en cada página.</p>
+        <span class="code-snippet">✓ Autor: "Dr. [Nombre], Colegiado Nº XXXX"<br>✓ Revisado por especialista en [área]<br>✓ Fuentes: estudios clínicos citados<br>✓ Última actualización: [fecha reciente]</span>
+      </div>
+      <div class="onpage-card fade-up">
+        <div class="onpage-number">4</div>
+        <h3>Estructura de Páginas</h3>
+        <p>Organiza cada página de servicio con una jerarquía clara de encabezados, contenido relevante de +1.000 palabras, FAQs y CTAs estratégicos.</p>
+        <span class="code-snippet">H1: Servicio principal + ubicación<br>H2: Subtemas (síntomas, tratamiento, precio)<br>H3: Detalles específicos y FAQs<br>CTA: Botón de cita visible siempre</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTENIDOS ═══ -->
+<section class="section section-alt" id="contenidos">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-icon"><i class="fa-solid fa-pen-fancy"></i></div>
+      <div class="section-label">Marketing de Contenidos</div>
+      <h2>Estrategia de Contenidos</h2>
+      <p class="section-desc">Un blog veterinario bien ejecutado atrae tráfico orgánico, demuestra autoridad y convierte visitantes en pac
